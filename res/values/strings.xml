@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Productos Frescos S.A.</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Opciones</string>
+    <string name="title_activity_usuarios">Clientes</string>
+    <string name="title_activity_agregar_cliente">Administración Clientes</string>
+    <string name="title_activity_menu">Menú Principal</string>
+    <string name="title_activity_productos">Productos</string>
+    <string name="title_activity_entregar_producto">Registrar Entrega</string>
+    <string name="title_activity_resumen_caja">Resumen de Caja</string>
+
+</resources>
