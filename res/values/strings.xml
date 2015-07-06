@@ -10,5 +10,8 @@
     <string name="title_activity_productos">Productos</string>
     <string name="title_activity_entregar_producto">Registrar Entrega</string>
     <string name="title_activity_resumen_caja">Resumen de Caja</string>
+    <string name="Tab1">Clientes</string>
+    <string name="Tab2">Entregas</string>
+    <string name="Tab3">Resumen de Caja</string>
 
 </resources>
