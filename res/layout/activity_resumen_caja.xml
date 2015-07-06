@@ -1,97 +1,117 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_scroll_view"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:layout_height="match_parent" >
+
+<GridLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnCount="2"
+    android:orientation="vertical"
+    android:rowCount="8"
     tools:context="cl.inacap.unidad1.activity.ResumenCajaActivity" >
-
-    <EditText
-        android:id="@+id/txt_totalentrega"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignRight="@+id/txt_saldo"
-        android:layout_below="@+id/textView1"
-        android:ems="10"
-        android:inputType="number" >
-
-        <requestFocus />
-    </EditText>
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/lv_entregas"
-        android:layout_below="@+id/lv_entregas"
-        android:layout_marginTop="14dp"
-        android:text="Total Entregas:" />
 
     <EditText
         android:id="@+id/txtBuscar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
+        android:layout_column="0"
+        android:layout_gravity="start|center"
+        android:layout_row="0"
         android:ems="10" />
-
-    <ListView
-        android:id="@+id/lv_entregas"
-        android:layout_width="fill_parent"
-        android:layout_height="200dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/txtBuscar"
-        android:layout_marginTop="15dp"
-        android:dividerHeight="2dp"
-        tools:listitem="@android:layout/simple_list_item_single_choice" >
-    </ListView>
 
     <ImageButton
         android:id="@+id/imgbtBuscar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/lv_entregas"
-        android:layout_toRightOf="@+id/txtBuscar"
-        android:src="@android:drawable/ic_menu_search" />
+        android:layout_column="1"
+        android:layout_gravity="left|center"
+        android:layout_row="0"
+        android:src="@android:drawable/ic_menu_search" />    
+
+    <ListView
+        android:id="@+id/lv_entregas"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:layout_row="1"
+        android:layout_column="0"  
+        android:layout_columnSpan="2"      
+        android:layout_gravity="left|center"
+        android:layout_marginTop="15dp"
+        android:dividerHeight="2dp"
+        tools:listitem="@android:layout/simple_list_item_single_choice" >
+    </ListView>
+
+            <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_row="2"
+        android:layout_column="0"  
+        android:layout_columnSpan="2"
+        android:layout_gravity="left|center"
+        android:layout_marginTop="14dp"
+        android:text="Total Entregas:" />
+    <EditText
+        android:id="@+id/txt_totalentrega"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_row="3"
+        android:layout_column="0"  
+        android:layout_columnSpan="2"       
+        android:layout_gravity="left|center"
+        android:ems="10"
+        android:inputType="number" >
+
+        <requestFocus />
+    </EditText>
+    
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_row="4"
+        android:layout_column="0"  
+        android:layout_columnSpan="2"        
+        android:layout_gravity="left|center"
+        android:text="Total Pedidos" />
 
     <EditText
         android:id="@+id/txt_totalpedidos"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_alignRight="@+id/txt_saldo"
-        android:layout_below="@+id/textView2"
+        android:layout_row="5"
+        android:layout_column="0"  
+        android:layout_columnSpan="2"      
+        android:layout_gravity="left|center"
         android:ems="10"
         android:inputType="number" />
-
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_row="6"
+        android:layout_column="0"  
+        android:layout_columnSpan="2"      
+        android:layout_gravity="left|center"
+        android:text="Saldo" />
     <EditText
         android:id="@+id/txt_saldo"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
+        android:layout_row="7"
+        android:layout_column="0"  
+        android:layout_columnSpan="2"      
+        android:layout_gravity="left|center"
         android:ems="10"
         android:inputType="numberDecimal" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/txt_totalentrega"
-        android:layout_below="@+id/txt_totalentrega"
-        android:text="Total Pedidos" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/txt_saldo"
-        android:layout_alignBottom="@+id/txt_saldo"
-        android:layout_marginRight="20dp"
-        android:layout_toLeftOf="@+id/txt_saldo"
-        android:text="Saldo" />
 
-</RelativeLayout>
+
+
+
+
+</GridLayout>
+</ScrollView>
