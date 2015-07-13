@@ -1,10 +1,13 @@
 package cl.inacap.unidad1.activity;
 
+import cl.inacap.unidad1.clases.Ubicacion;
 import cl.inacap.unidad1.clases.Usuario;
 import cl.inacap.unidad1.utils.Constantes;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -47,6 +50,7 @@ public class LoginActivity extends Activity {
     		txt_login.setText("");
     		txt_contrasena.setText("");
     		
+   		
     		Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
     		LoginActivity.this.startActivity(intent);   
     	}

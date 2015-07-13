@@ -1,6 +1,5 @@
 package cl.inacap.unidad1.basedatos;
 
-import cl.inacap.unidad1.activity.LoginActivity;
 import cl.inacap.unidad1.utils.Constantes;
 import android.content.ContentValues;
 import android.content.Context;
@@ -94,6 +93,22 @@ public class BaseDatos extends SQLiteOpenHelper{
 			+ ENT_COL_CLIENTE + " TEXT NOT NULL, "
 			+ ENT_COL_PRECIO + " TEXT NOT NULL );";
 	
+	//ubicaciones
+	public static final String TABLA_UBICACION = "ubicacion";
+	
+	public static final String UBI_COL_FECHA = "fecha";
+	public static final String UBI_COL_LAT = "latitud";
+	public static final String UBI_COL_LON = "longitud";
+	public static final String UBI_COL_DIR = "direccion";
+	
+	private static final String CREAR_TABLA_UBICACION = 
+			"CREATE TABLE " + TABLA_UBICACION
+			+ "(" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+			+ UBI_COL_FECHA + " TEXT NOT NULL, "
+			+ UBI_COL_LAT + " REAL NOT NULL, "
+			+ UBI_COL_LON + " REAL NOT NULL, "
+			+ UBI_COL_DIR + " TEXT NOT NULL);";	
+	
 	
 	
 	@Override
@@ -102,6 +117,7 @@ public class BaseDatos extends SQLiteOpenHelper{
 		db.execSQL(CREAR_TABLA_CLIENTES);
 		db.execSQL(CREAR_TABLA_PRODUCTOS);
 		db.execSQL(CREAR_TABLA_ENTREGAS);
+		db.execSQL(CREAR_TABLA_UBICACION);
  
         // usuarios
         
@@ -182,6 +198,8 @@ public class BaseDatos extends SQLiteOpenHelper{
 		bd.execSQL("DROP TABLE  IF EXISTS "+ TABLA_CLIENTES);
 		bd.execSQL("DROP TABLE  IF EXISTS "+ TABLA_PRODUCTOS);
 		bd.execSQL("DROP TABLE  IF EXISTS "+ TABLA_ENTREGA);
+		bd.execSQL("DROP TABLE IF EXISTS "+ TABLA_UBICACION);
+		
 		onCreate(bd);
 		
 	}
