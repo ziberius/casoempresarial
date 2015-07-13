@@ -115,9 +115,11 @@ public class Cliente {
 		values.put(BaseDatos.CLI_COL_TELEFONO, this.telefono_cliente);
 		values.put(BaseDatos.CLI_COL_VENDEDOR, this.vendedor);
 		values.put(BaseDatos.CLI_COL_ESTADO, Constantes.VIGENTE);
-		
+		try{
 		sqlDB.insert(BaseDatos.TABLA_CLIENTES, null, values);	
-		
+		}catch(Exception ex){
+			return false;
+		}
 		return true;
 	}
 	
